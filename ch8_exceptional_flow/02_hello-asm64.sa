@@ -1,0 +1,18 @@
+1 .section .data
+2 string:
+3 .ascii "hello, world\n"
+4 string_end:
+5 .equ len, string_end - string
+6 .section .text
+7 .globl main
+8 main:
+First, call write(1, "hello, world\n", 13)
+9 movq $1, %rax write is system call 1
+10 movq $1, %rdi Arg1: stdout has descriptor 1
+11 movq $string, %rsi Arg2: hello world string
+12 movq $len, %rdx Arg3: string length
+13 syscall Make the system call
+Next, call _exit(0)
+14 movq $60, %rax _exit is system call 60
+15 movq $0, %rdi Arg1: exit status is 0
+16 syscall Make the system call
