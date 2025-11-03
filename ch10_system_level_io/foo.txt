@@ -1,0 +1,8 @@
+cpstdin.c
+csapp.c
+csapp.h
+foo.txt
+readdir.c
+statbuff.h
+statcheck
+statcheck.c
